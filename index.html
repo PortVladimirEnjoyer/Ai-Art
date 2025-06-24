@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Application of AI into Art</title>
+    <style>
+        .bottom-image-holder {
+         width: 100%;
+         height: 200px;
+         background-color: rgba(0, 0, 0, 0.1);
+         border: 2px dashed #000;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-top: 20px;
+         overflow: hidden; /* Ensures no overflow */
+         padding: 10px; /* Adds some spacing */
+        }
+
+.bottom-image-holder img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Maintains aspect ratio */
+    display: block; /* Removes any extra space below image */
+}
+        body {
+            margin: 0;
+            padding: 0;
+            color: rgb(0, 0, 0);
+            font-family: 'Press Start 2P', monospace;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        /* Video Background */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .video-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 30px;
+            max-width: 800px;
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.411);
+            border-radius: 10px;
+            width: 80%;
+        }
+        
+        h1 {
+            display: inline-block;
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 10px 0;
+            border-bottom: 4px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        h2, h3, p {
+            display: inline-block;
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 10px 0;
+        }
+
+        .image-holder {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border: 2px dashed #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+        }
+
+        .image-holder p {
+            color: #000000;
+        }
+
+        /* Code block styling */
+        pre {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+            overflow-x: auto;
+            max-width: 100%;
+        }
+
+        code {
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        /* Parallel image holders */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .parallel-image-holder {
+            width: 45%;
+            height: 300px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border: 2px dashed #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parallel-image-holder p {
+            color: #666;
+        }
+
+        .arrow {
+            font-size: 40px;
+            color: #000;
+        }
+        
+        
+        
+
+        /* Bottom image holder */
+        .bottom-image-holder {
+            width: 100%;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border: 2px dashed #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .bottom-image-holder p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video class="video-bg" autoplay loop muted>
+            <source src="good.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="content" id="title">
+        <h1>Application of AI into Art</h1>
+    </div>
+
+    <div class="content" id="Introduction">
+        <h2>Current Situation and Reason Behind This Project</h2>
+        <p>Since the beginning of the new ai revolution , many peapole including artits but not only 
+           complained about the "death of art". Their belief is that ai will replace the artists because it's making
+           art , faster and cheaper by reproducing what was already done before. I personnally dont think that they are right.
+           To me ai should be used as a way to make art deeper. To give it a higher meaning. It is a tool which will make artists
+           look for more than just beauty.   
+        </p>
+    </div>
+
+    <div class="content" id="main_stuff">
+        <h3>One Example That AI and Art Can Work Together</h3>
+        <p>
+            To illustrate my thought. I'll show you how a simple algorithm can help with an artistical process.
+            The artistical process here is called builidng a Nonlinear Narrative  story. Basically a story where the chronological order is changed.
+            This simple algorithm will perform this task.
+           
+        </p>
+    </div>
+
+    <div class="content" id="documentation">
+        <h2>How Does the Algorithm Work in Practice?</h2>
+        <div class="image-container">
+            <div class="parallel-image-holder">
+                <p>[Original Story Structure]</p>
+                <p id="Example" style="font-size: 6px; font-family: 'Press Start 2P', monospace;">
+                    Once upon a time, in a kingdom far away, there lived a wise king.
+                    The kingdom was peaceful and prosperous for many years.
+                    But one day, a terrible dragon attacked the villages.
+                    The king decided to seek help from the ancient wizard.
+                    After a long journey, the wizard gave him a magic sword.
+                    In the end, the king defeated the dragon and peace returned.
+                    The kingdom celebrated their brave king for many years.
+                </p>
+            </div>
+            <div class="arrow">→</div>
+            <div class="parallel-image-holder">
+                <p>[Shuffled Story Output]</p>
+                <p id="Example" style="font-size: 6px; font-family: 'Press Start 2P', monospace;">
+                    But one day, a terrible dragon attacked the villages. Once upon a time, in a
+                    kingdom far away, there lived a wise king. The kingdom was peaceful and
+                    prosperous for many years. The king decided to seek help from the ancient
+                    wizard. In the end, the king defeated the dragon and peace returned. After a
+                    long journey, the wizard gave him a magic sword. The kingdom celebrated their
+                    brave king for many years.
+                </p>
+            </div>
+        </div>
+        <h2>Code of the Algorithm</h2>
+        <pre><code>import random
+
+# Configuration - defines story parts and their markers
+STORY_PARTS = {
+    1: {"name": "Beginning", "markers": ["once upon a time", "in a kingdom", "long ago"]},
+    2: {"name": "Problem", "markers": ["but one day", "suddenly", "disaster struck"]},
+    3: {"name": "Action", "markers": ["decided to", "embarked on", "set out to"]},
+    4: {"name": "Ending", "markers": ["in the end", "finally", "happily ever after"]}
+}
+
+def detect(paragraph):
+    """Identify which story part a paragraph belongs to"""
+    lower_para = paragraph.lower()
+    for part_num, data in STORY_PARTS.items():
+        if any(marker in lower_para for marker in data["markers"]):
+            return part_num
+    return None  # No match found
+
+def assign(paragraphs):
+    """Assign each paragraph to a story part"""
+    analyzed = []
+    for para in paragraphs:
+        part_num = detect(para) or 1  # Default to Beginning (1) if no match
+        analyzed.append({
+            "text": para,
+            "number": part_num,
+            "name": STORY_PARTS[part_num]["name"]
+        })
+    return analyzed
+
+def shuffle(analyzed_parts):
+    """Randomize the order of parts"""
+    # Create list of indices to shuffle
+    indices = list(range(len(analyzed_parts)))
+    random.shuffle(indices)
+    
+    # Return parts in new order
+    return [analyzed_parts[i] for i in indices]
+
+def output(shuffled_parts):
+    """Format and print the rearranged story"""
+    # Combine all paragraphs into one text
+    story_text = " ".join(part["text"] for part in shuffled_parts)
+    
+    # Wrap to 70 characters per line
+    from textwrap import fill
+    print(fill(story_text, width=70))
+
+# Example usage
+story = """
+Once upon a time, in a kingdom far away, there lived a wise king.
+The kingdom was peaceful and prosperous for many years.
+But one day, a terrible dragon attacked the villages.
+The king decided to seek help from the ancient wizard.
+After a long journey, the wizard gave him a magic sword.
+In the end, the king defeated the dragon and peace returned.
+The kingdom celebrated their brave king for many years.
+""".strip()
+
+# Pipeline execution
+paragraphs = [p.strip() for p in story.split('\n') if p.strip()]
+analyzed = assign(paragraphs)
+shuffled = shuffle(analyzed)
+output(shuffled)</code></pre>
+        
+        <div class="bottom-image-holder">
+            <p>[Algorithm Visualization or Additional Example]</p>
+            <img src="Org chart.png" alt="Algorithm Flow Chart" style="max-width: 100%; max-height: 100%; object-fit: contain;">>
+        </div>
+    </div>
+
+    <div class="content" id="conclusion">
+        <h2>Conclusion</h2>
+        <p>
+            In my opinion , this is a good example of how ai and artist can share a common ground and how ai should be used by artists in general.
+
+            Here its not just making the text or anything but activly engaging into a crucial part of the artistical process just like the keyboard of the author of the 
+            
+            story did. 
+        </p>
+    </div>
+</body>
+</html>
